@@ -1,0 +1,86 @@
+<!-- <<<<<<< HEAD -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="icon" href="{% static 'img/svg/replica_rs.svg' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+<div class="main-container">
+    <div class="left">
+        <form class="login-form" onsubmit="return validateForm()" action="{% url 'app' %}" method="post">
+            {% csrf_token %}
+            <h2>Log in</h2>
+            <h3>New to Replica? <span class="purple-text">Sign up now</span></h3>
+            <div class="fields">
+                <label> Username <br>
+                    <input type="text" name="user"> <br>
+                </label>
+                <label> Password <br>
+                    <input type="password" name="password"> <br>
+                </label>
+                <button>Log in</button>
+            </div>
+        </form>
+        <div class="footer">
+            By logging in, you agree to our <span class="purple-text">Terms of Service</span> and
+            <span class="purple-text">Privacy Policy</span>.
+        </div>
+    </div>
+    <div class="right">
+        <img src="{% static 'img/svg/replica_demo.svg' %}" alt="Replica logo">
+    </div>
+</div>
+<script src="{% static 'js/login.js' %}"></script>
+</body>
+<!-- =======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="icon" href="{% static 'img/svg/replica_rs.svg' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+<div class="main-container">
+    <div class="left">
+        <form class="login-form" onsubmit="return validateForm()" action="{% url 'app' %}" method="post">
+            {% csrf_token %}
+            <h2>Log in</h2>
+            <h3>New to Replica? <span class="purple-text">Sign up now</span></h3>
+            <div class="fields">
+                <label> Username <br>
+                    <input type="text" name="user"> <br>
+                </label>
+                <label> Password <br>
+                    <input type="password" name="password"> <br>
+                </label>
+                <button>Log in</button>
+            </div>
+        </form>
+        <div class="footer">
+            By logging in, you agree to our <span class="purple-text">Terms of Service</span> and
+            <span class="purple-text">Privacy Policy</span>.
+        </div>
+    </div>
+    <div class="right">
+        <img src="{% static 'img/svg/replica_demo.svg' %}" alt="Replica logo">
+    </div>
+</div>
+<script src="{% static 'js/login.js' %}"></script>
+</body> -->
+<!-- >>>>>>> bc2d6b3e3812ffdde9b508ccab199bcf52b781fa -->
+</html>

@@ -1,0 +1,43 @@
+{% load static %}
+<div class="cb-container">
+    <div class="cb-search-container">
+        <div class="cb-search-bar">
+            <span class="material-icons nav">search</span>
+            <input class="cb-input" type="text" placeholder="Search a celebrity from your collection...">
+        </div>
+        <button type="button" class="cb-btn">
+            <span class="material-icons">sort</span>Sort by...
+        </button>
+        <button type="button" class="cb-btn">
+            <span class="material-icons">filter_alt</span>Filter by...
+        </button>
+    </div>
+</div>
+<div class="cb-content">
+    <div class="cb-row">
+        {% for celeb in celeb_list %}
+        <div class="cb-card" id="cb-card">
+            <div class="cb-photo">
+                <div class="cb-img" style="background: url('{{ celeb.profile_image.url }}'); background-size: cover">
+                </div>
+                <div class="cb-info">
+                    <div class="cb-name">{{ celeb.name }}</div>
+                    <div class="cb-occupation">Generic</div>
+                    <div class="cb-stats-container">
+                        <div class="cb-stats-followers">{{ celeb.total_followers }}
+                            <span class="material-icons">groups</span>
+                        </div>
+                        <div class="cb-stats-bio">Bio
+                            <span class="material-icons">menu_book</span>
+                        </div>
+                        <div class="cb-stats-rating">{{ celeb.rating }}
+                            <span class="material-icons rating">grade</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<script>updateCards()</script>

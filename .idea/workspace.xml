@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6e8f75c8-9834-4528-843e-0e1b1ac4c519" name="Changes" comment="add inpainting tool">
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.idea/djangoProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/djangoProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/demo/static/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/static/js/login.js" afterDir="false" />
+>>>>>>> bc2d6b3e3812ffdde9b508ccab199bcf52b781fa
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/static/img/jpg/img1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/demo/static/img/jpg/img1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/static/img/jpg/img2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/demo/static/img/jpg/img2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/static/img/jpg/img3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/demo/static/img/jpg/img3.jpg" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/demo/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/utils/image_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo/utils/image_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangoProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/demo/static/img/jpg/inpaint.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/demo/static/img/jpg/inpaint.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/mask.jpg" afterDir="false" />
+>>>>>>> bc2d6b3e3812ffdde9b508ccab199bcf52b781fa
+    </list>
+    <list id="0acf7a1b-ba3a-4fdc-8e95-da080e18cd4b" name="Changes by mmolina" comment="Changes by mmolina" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="eziotamburini" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;eziotamburini&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="b901958e-93a3-4a0f-a921-a6d5454e3f0a" />
+        <option name="url" value="https://github.com/replicaIA/replica-demo" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2bmLtXHXjwg1Qqjo97UgAGxc06c" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Django Server.djangoProject.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "django.template.preview.state": "SHOW_EDITOR",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+<<<<<<< HEAD
+    "last_opened_file_path": "/Users/mmolina/Documents/Replica/Simple_WebApp/replica-demo",
+=======
+    "last_opened_file_path": "C:/Users/jona_/Desktop/repo/replica-demo",
+    "list.type.of.created.stylesheet": "CSS",
+>>>>>>> bc2d6b3e3812ffdde9b508ccab199bcf52b781fa
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.smartKeys",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\k\Desktop\REPLICA\replica-demo-master\demo\static\img\svg" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="djangoProject" type="Python.DjangoServer" factoryName="Django server">
+      <module name="djangoProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="djangoProject.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="localhost" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-50da183f06c8-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13135.95" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6e8f75c8-9834-4528-843e-0e1b1ac4c519" name="Changes" comment="" />
+      <created>1706815523422</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1706815523422</updated>
+      <workItem from="1706815544680" duration="473000" />
+      <workItem from="1707164158008" duration="3271000" />
+      <workItem from="1707173165137" duration="12653000" />
+      <workItem from="1707224698725" duration="639000" />
+      <workItem from="1707225356203" duration="187000" />
+      <workItem from="1707225564689" duration="5339000" />
+      <workItem from="1707241183371" duration="1043000" />
+      <workItem from="1707242449054" duration="3951000" />
+      <workItem from="1707275352493" duration="6267000" />
+      <workItem from="1707322244973" duration="1829000" />
+      <workItem from="1707418043552" duration="35530000" />
+      <workItem from="1707492604901" duration="4216000" />
+      <workItem from="1707765493388" duration="729000" />
+      <workItem from="1707766241734" duration="16303000" />
+      <workItem from="1707839816550" duration="22483000" />
+      <workItem from="1707897203530" duration="8662000" />
+      <workItem from="1707922906568" duration="20252000" />
+      <workItem from="1707945668754" duration="1352000" />
+      <workItem from="1708000695378" duration="24240000" />
+      <workItem from="1708093314304" duration="28287000" />
+      <workItem from="1708276466354" duration="2535000" />
+      <workItem from="1708286600227" duration="25633000" />
+      <workItem from="1708353810708" duration="12101000" />
+      <workItem from="1708370383787" duration="21072000" />
+      <workItem from="1708470838212" duration="477000" />
+      <workItem from="1708471327077" duration="6345000" />
+<<<<<<< HEAD
+      <workItem from="1708480407329" duration="5281000" />
+=======
+      <workItem from="1708479658411" duration="2398000" />
+      <workItem from="1708512157128" duration="7712000" />
+>>>>>>> bc2d6b3e3812ffdde9b508ccab199bcf52b781fa
+    </task>
+    <task id="LOCAL-00001" summary="add app navbar ui">
+      <option name="closed" value="true" />
+      <created>1707241890384</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1707241890384</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add app navbar ui">
+      <option name="closed" value="true" />
+      <created>1707242655203</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707242655203</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add basic image generation">
+      <option name="closed" value="true" />
+      <created>1707945186153</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1707945186153</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fix visuals">
+      <option name="closed" value="true" />
+      <created>1707948907604</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707948907605</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add inpainting tool">
+      <option name="closed" value="true" />
+      <created>1708479679739</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1708479679739</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="add app generator design" />
+    <MESSAGE value="add app navbar ui" />
+    <MESSAGE value="add basic image generation" />
+    <MESSAGE value="fix visuals" />
+    <MESSAGE value="Changes by mmolina" />
+    <MESSAGE value="add inpainting tool" />
+    <option name="LAST_COMMIT_MESSAGE" value="add inpainting tool" />
+  </component>
+</project>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Replica App</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    <link rel="icon" href="{% static 'img/svg/replica_rs.svg' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+    <meta name="htmx-config" content='{"includeIndicatorStyles": false}'>
+</head>
+<body>
+<div class="container">
+    <div class="modal" hidden id="modal"></div>
+    <nav class="header">
+        <div class="nav-content">
+            <div class="logo">
+            </div>
+            <div class="selection">
+                <div class="nav-anchor">Projects</div>
+                <div class="nav-anchor">Celebrities</div>
+                <div class="nav-anchor-selected">Generator</div>
+                <div class="nav-anchor">Drafts</div>
+                <div class="nav-anchor">Requests</div>
+            </div>
+            <div class="profile-stuff">
+                <div class="welcome">Welcome, <span class="user">john_doe543</span>!</div>
+                <div class="profile-pic"></div>
+                <div class="settings-icon"><span class="material-icons nav">tune</span></div>
+            </div>
+        </div>
+    </nav>
+    <div class="generator-container">
+        <div class="celeb-browser" id="celeb-browser" hidden></div>
+        <div class="celeb-browser" style="max-width: initial;" id="brush-tool" hidden></div>
+        <form id="generator-form" name="generator-form" class="form">
+            {% csrf_token %}
+            <div class="generator-left">
+                <div class="section-text">
+                    <span class="material-symbols-outlined robot-anim">smart_toy</span>
+                    <p>The Generator</p>
+                </div>
+                <div class="input">
+                    <label> Prompt
+                        <textarea maxlength="150" id="prompt" name="prompt" placeholder="Describe your desired image in detail (150 characters max.)"></textarea>
+                    </label>
+                </div>
+                <div class="input">
+                    <label for="celebrity"> Celebrity </label>
+                    <div class="input-wrapper">
+                        <input readonly class="form-input" type="text" id="celebrity" name="celebrity" placeholder="Select one of your celebrities" value="">
+                        <button type="button" class="form-btn" id="browse" hx-get="{% url 'celeb_browser' %}" hx-target="#celeb-browser" hx-trigger="click">
+                            <span class="material-icons">person_search</span>Browse
+                        </button>
+                    </div>
+                </div>
+                <div class="section-text"><span class="material-symbols-outlined robot-anim">brand_awareness</span>
+                    <p>Branding Options</p>
+                </div>
+                <div class="input">
+                    <label for="product-placement"> Product Placement </label>
+                    <div class="input-wrapper">
+                        <input class="form-input" type="text" id="product-placement" placeholder="Select a product placement" disabled>
+                        <button type="button" class="form-btn" style="width: 30%;"><span class="material-icons">expand_more</span></button>
+                    </div>
+                </div>
+                <div class="input">
+                    <label> Product Interaction
+                        <textarea maxlength="150" style="height: 50px" placeholder="How do you want the celebrity to use your product?"></textarea>
+                    </label>
+                </div>
+                <div class="input" style="margin-bottom: 120px">
+                    <div class="input-wrapper">
+                        <label class="dual-label"> Logo
+                            <button type="button" class="form-btn-2"><span class="material-icons">upload</span> Upload</button>
+                        </label>
+                        <label class="dual-label"> Title / Text
+                            <input class="form-input" type="text" id="title-or-text" placeholder="Add a title or text" style="width: auto">
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="generator-center">
+                <div class="img-viewer-container">
+                    <button type="button" class="side-arrow" id="arrow-left"><span class="material-icons">west</span></button>
+                    <div class="main-img" id="main-img">
+                        <div class="fullscreen"><span class="material-symbols-outlined">fullscreen</span></div>
+                        <div class="generated-images" id="generated-images">
+                            <span class="material-symbols-outlined loading-robot" id="loading-robot" style="margin-bottom: 20px; transform: scale(1.9)">smart_toy</span>
+                            No images have been generated yet!
+                        </div>
+                        <div class="img-counter" id="img-counter">1/1</div>
+                    </div>
+                    <button type="button" class="side-arrow" id="arrow-right"><span class="material-icons">east</span></button>
+                    </div>
+                <div class="toolbar">
+                    <div class="tool"><span class="material-icons">done</span></div>
+                    <div class="tool"><span class="material-icons">close</span></div>
+                    <div class="tool"><span class="material-icons">thumb_up</span></div>
+                    <div id="download-btn" class="tool"><span class="material-icons">download</span></div>
+                    <button type="button" hx-get="{% url 'brush_tool' %}" hx-target="#brush-tool" hx-trigger="click" id="brush-btn"
+                            class="tool-btn htmx-request"><span class="material-symbols-outlined">format_paint</span>Inpainting</button>
+                    <button type="button" id="generate-btn" class="tool-btn htmx-request" hx-post="{% url 'generate' %}"
+                            hx-disabled-elt="#generate-btn, .side-arrow, #brush-btn, #download-btn" hx-target="#generated-images" hx-trigger="click"
+                            hx-indicator="#generate-btn, #loading-robot, #brush-btn">
+                        <span class="material-icons">add_photo_alternate</span>Generate
+                    </button>
+                </div>
+            </div>
+            <div class="generator-right">
+                <div class="section-text"><span class="material-symbols-outlined robot-anim">person_edit</span>
+                    <p>Appearance Options</p>
+                </div>
+                <div class="input">
+                    <div class="input-wrapper">
+                        <label class="dual-label"> Facial Expressions
+                            <input class="form-input" type="text" id="facial-exp" name="facial-exp" placeholder="Describe facial expressions" style="width: auto; margin-right:14px">
+                        </label>
+                        <label class="dual-label"> Age
+                            <input class="form-input" type="text" id="age" name="age" placeholder="Enter or describe age" style="width: auto">
+                        </label>
+                    </div>
+                </div>
+                <div class="input">
+                    <label> Background
+                        <input name="background" id="background" class="form-input" maxlength="150" style="width: auto;" placeholder="Describe a desired background">
+                    </label>
+                </div>
+                <div class="input">
+                    <div class="input-wrapper">
+                        <label class="dual-label"> Angle
+                            <input class="form-input" type="text" id="angle" name="angle" placeholder="Describe an angle" style="width: auto; margin-right:14px">
+                        </label>
+                        <div class="input-wrapper-3">
+                            <label class="dual-label" for="aspect"> Aspect </label>
+                            <div class="input-wrapper-2">
+                                <input class="form-input" type="text" id="aspect" placeholder="Select aspect" readonly style="width: 110%">
+                                <button type="button" class="form-btn" style="width: 30%;"><span class="material-icons">expand_more</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="input">
+                    <div class="input-wrapper">
+                        <label class="dual-label"> Culture
+                            <input class="form-input" type="text" id="culture" name="culture" placeholder="Describe a culture" style="width: auto; margin-right:14px">
+                        </label>
+                        <label class="dual-label"> Holiday
+                            <input class="form-input" type="text" id="holiday" name="holiday" placeholder="Describe a holiday" style="width: auto">
+                        </label>
+                    </div>
+                </div>
+                <div class="little-text">Can't find what you're looking for? <br>
+                    Try searching under "Advanced Options"!</div>
+                <div class="big-buttons">
+                    <button type="button" class="big-btn send-approval"><span class="material-icons">how_to_reg</span>
+                        Send for approval</button>
+                    <button type="button" class="big-btn save-drafts"><span class="material-icons">save</span>
+                        Save to drafts</button>
+                    <button type="button" class="big-btn advanced-options"><span class="material-icons">settings</span>
+                        Advanced options</button>
+                </div>
+            </div>
+        </form>
+        <div id="papcontainer"><img id="pap" src="" hidden alt=""></img></div>
+    </div>
+</div>
+<script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>

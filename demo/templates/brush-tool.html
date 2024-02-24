@@ -1,0 +1,92 @@
+{% load static %}
+
+<div class="bt-container">
+    <form id="bt-form" class='form'>
+        {% csrf_token %}
+        <div class="bt-top">
+            <div class="bt-left">
+                <div class="section-text">
+                    <span class="material-symbols-outlined robot-anim">format_paint</span>Inpainting Tool
+                </div>
+                <div class="input">
+                    <label> Prompt
+                        <textarea maxlength="150" id="bt-prompt" name="prompt" placeholder="Describe what you would like to see"></textarea>
+                    </label>
+                </div>
+                <div class="input">
+                    <label> Negative Prompt
+                        <textarea maxlength="150" id="bt-antiprompt" name="negative-prompt" placeholder="Describe what you would NOT like to see"></textarea>
+                    </label> 
+                </div>
+                <div class="slidercontainer">
+                    <label class="sliderlabel">Variation
+                        <input class="slider" id="variation" name="variation" type="range" min="1" max="100" value="50">
+                    </label>
+                </div>
+            </div>
+            <div class="bt-right">
+                <canvas class="bt-canvas" id="bt-canvas"></canvas>
+                <canvas class="mask-canvas" id="mask-canvas" style="display: none"></canvas>
+                <div class="generated-images" id="bt-loading">
+                    <span class="material-symbols-outlined loading-robot robot-anim" id="loading-robot" style="margin-bottom: 20px; transform: scale(1.9)">smart_toy</span>
+                    Loading your images...
+                </div>
+            </div>
+        </div>
+        <div class="bt-bottom">
+            <button type="button" class="tool" id="paintbutton">
+                <span class="material-symbols-outlined">
+                    format_paint
+                </span>
+            </button>
+            <button id="erasebutton" type="button" class="tool">
+                <span class="material-symbols-outlined">
+                    ink_eraser
+                </span>
+            </button>
+            <div class="colorcontainer">
+                <label class="nolabel">
+                    <input type="color" id="colorpicker" value="#f7ff00">
+                </label>
+            </div>
+            <label class="sliderlabel">Size
+                <input id="sizeslider" class="slider" min="1" max="100" value="50" type="range">
+            </label>
+            <label class="sliderlabel">Opacity
+                <input id="alphaslider" class="slider" min="1" max="100" value="50" type="range">
+            </label>          
+            <button id="undo" type="button" class="tool">
+                <span class="material-symbols-outlined">
+                    undo
+                </span>
+            </button>
+            <button id="redo" type="button" class="tool">
+                <span class="material-symbols-outlined">
+                    redo
+                </span>
+            </button>
+            <button type="button" id="bt-discard" class="big-btn save-drafts">
+                <span class="material-symbols-outlined">delete_forever</span>
+                Clear
+            </button>
+            <button type="button" id="bt-restore" class="big-btn save-drafts">
+                <span class="material-symbols-outlined">restart_alt</span>
+                Restore
+            </button>
+            {% csrf_token %}
+            <button type="button" id="generate-inpaint" class="big-btn advanced-options" hx-post="{% url 'generate_inpaint' %}"
+                    hx-vals="js:{'mask-image': getMaskData(), 'reference-image-index': currentImageIndex}"
+                    hx-trigger="click"
+                    hx-target="#pap" hx-swap="outerHTML" hx-disabled-elt=".big-btn" hx-indicator=".big-btn">
+                <span class="material-icons">add_photo_alternate</span>
+                Generate
+            </button>
+            <button id="bt-save" type="button" class="big-btn" hx-post="{% url 'replace_inpaint' %}" hx-trigger="click"
+                    hx-indicator=".big-btn" hx-disabled-elt=".big" hx-vals="js:{'reference-image-index': currentImageIndex}">
+                <span class="material-icons">save</span>
+                Save
+            </button>
+        </div>
+    </form>
+    <script src="{% static 'js/brush-tool.js' %}"></script>
+</div>

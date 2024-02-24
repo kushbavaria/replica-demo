@@ -1,0 +1,7 @@
+{% load static %}
+
+    <img hidden id="imagen1" style="margin-top: 50px" height="500" src="{% static 'img/jpg/img1.jpg' %}?{% now "U" %}" alt="First generated image">
+    <img hidden id="imagen2" style="margin-top: 50px" height="500" src="{% static 'img/jpg/img2.jpg' %}?{% now "U" %}" alt="Second generated image">
+    <img hidden id="imagen3" style="margin-top: 50px" height="500" src="{% static 'img/jpg/img3.jpg' %}?{% now "U" %}" alt="Third generated image">
+
+<script src="{% static 'js/generated-images.js' %}"></script>
